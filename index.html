@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Investment Game</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/trade.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/podium.css">
+  <link rel="stylesheet" href="css/animations.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Investment Game</h1>
+
+  <div id="setup">
+    <label>Players:
+      <select id="playerCount">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </label>
+
+    <div id="playerNamesContainer"></div>
+
+    <label>Game Mode:
+      <select id="gameMode">
+        <option value="turns">Turns</option>
+        <option value="money">Target Money</option>
+      </select>
+    </label>
+
+    <input id="modeValue" placeholder="Enter value" />
+    <button onclick="startGame()">Start Game</button>
+  </div>
+
+  <div id="game" class="hidden">
+    <div id="infoBar"></div>
+    <div id="buySellToggle"></div>
+
+    <table id="stockTable">
+      <thead>
+        <tr>
+          <th>Company</th>
+          <th>Price</th>
+          <th>Change</th>
+          <th>Owned</th>
+          <th>Trade</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <div class="buttons">
+      <button onclick="endTurn()">End Turn</button>
+      <button class="danger" onclick="confirmEndGame()">End Game</button>
+    </div>
+  </div>
+
+  <div id="podium" class="hidden">
+    <div id="celebrationContainer">
+      <div id="firstPlace" class="podiumBlock"></div>
+      <div id="secondPlace" class="podiumBlock"></div>
+      <div id="thirdPlace" class="podiumBlock"></div>
+    </div>
+    <button onclick="resetPodium()">Back</button>
+  </div>
+
+</div>
+
+<div id="popup" class="hidden">
+  <div id="popupContent"></div>
+</div>
+
+<!-- JS ORDER (CRITICAL) -->
+<script src="js/core/state.js"></script>
+<script src="js/core/game.js"></script>
+<script src="js/core/market.js"></script>
+<script src="js/core/events.js"></script>
+
+<script src="js/ui/ui-popup.js"></script>
+<script src="js/ui/ui-graph.js"></script>
+<script src="js/ui/ui-trade.js"></script>
+<script src="js/ui/ui-render.js"></script>
+<script src="js/ui/ui-podium.js"></script>
+<script src="js/ui/ui-main.js"></script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

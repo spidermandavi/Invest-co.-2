@@ -1,0 +1,20 @@
+#buySellToggle {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#buySellToggle button {
+  flex: 1;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#buySellToggle .active {
+  background: linear-gradient(135deg, #4caf50, #81c784);
+  color: white;
+}
+
+#buySellToggle button:last-child.active {
+  background: linear-gradient(135deg, #f44336, #e57373);
+}

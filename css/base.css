@@ -1,0 +1,22 @@
+/* ===== BASE ===== */
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #eaeaea;
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+/* ===== UTIL ===== */
+.hidden {
+  display: none !important;
+}
+
+.green { color: #4caf50; font-weight: bold; }
+.red { color: #f44336; font-weight: bold; }
+.neutral { color: #ccc; }

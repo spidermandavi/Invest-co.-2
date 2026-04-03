@@ -14,7 +14,7 @@ function forceSell(){
 }
 
 function randomEvent(){
-  if(turn < 5 || Math.random() > 0.2) return;
+  if(turn < 10 || Math.random() > 0.2) return;
 
   const events = [
     {text:"Gift", value:200},

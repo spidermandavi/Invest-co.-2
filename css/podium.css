@@ -1,0 +1,33 @@
+#celebrationContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.podiumBlock {
+  width: 120px;
+  height: 150px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-weight: bold;
+}
+
+/* Colors */
+#firstPlace {
+  background: gold;
+  height: 180px;
+}
+
+#secondPlace {
+  background: silver;
+  height: 140px;
+}
+
+#thirdPlace {
+  background: #cd7f32;
+  height: 110px;
+}

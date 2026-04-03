@@ -1,0 +1,23 @@
+/* ===== CONTAINER ===== */
+.container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== PANELS ===== */
+#setup, #game, #podium {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-top: 20px;
+}
+
+/* ===== BUTTON LAYOUT ===== */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}

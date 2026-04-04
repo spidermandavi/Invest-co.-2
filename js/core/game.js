@@ -1,3 +1,4 @@
+const GS = window.GameState;
 function startGame() {
   let count = Number(document.getElementById("playerCount").value);
   gameMode = document.getElementById("gameMode").value;

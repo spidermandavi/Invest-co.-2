@@ -21,5 +21,4 @@ function drawGraph(data, color="#4caf50"){
 }
 window.Game = window.Game || {};
 
-Game.popup = popup;
-Game.closePopup = closePopup;
+Game.drawGraph = drawGraph;

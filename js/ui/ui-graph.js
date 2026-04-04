@@ -1,5 +1,5 @@
-function drawGraph(data, color="#4caf50"){
-  const canvas = document.getElementById("graphCanvas");
+function drawGraph(data, color="#4caf50", canvasId="graphCanvas"){
+  const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const ctx = canvas.getContext("2d");
 

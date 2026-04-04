@@ -19,3 +19,7 @@ function drawGraph(data, color="#4caf50"){
   ctx.strokeStyle=color;
   ctx.stroke();
 }
+window.Game = window.Game || {};
+
+Game.popup = popup;
+Game.closePopup = closePopup;

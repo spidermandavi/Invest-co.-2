@@ -81,3 +81,9 @@ function resetGame(){
   document.getElementById('game').classList.add('hidden');
   players=[]; currentPlayer=0; turn=1; actionTracker={};
 }
+window.Game = window.Game || {};
+
+Game.startGame = startGame;
+Game.endTurn = endTurn;
+Game.endGame = endGame;
+Game.resetGame = resetGame;

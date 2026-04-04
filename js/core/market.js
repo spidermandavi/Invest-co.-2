@@ -1,5 +1,5 @@
 function updateMarket() {
-  stocks.forEach(s => {
+  GS.stocks.forEach(s => {
     let change = (Math.random()*2-1)*s.volatility*s.price;
     s.price = Math.max(1, Math.min(500, s.price + change));
     s.change = change;
@@ -8,8 +8,8 @@ function updateMarket() {
 }
 
 function applyDividends() {
-  players.forEach((p, pi)=>{
-    stocks.forEach(s=>{
+  GS.players.forEach((p, pi)=>{
+    GS.stocks.forEach(s=>{
       let owned = s.owned[pi];
       let value = owned*s.price;
 

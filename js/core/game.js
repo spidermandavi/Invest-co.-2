@@ -4,13 +4,13 @@ function startGame() {
   gameMode = document.getElementById("gameMode").value;
   modeValue = Number(document.getElementById("modeValue").value);
 
-  players = [];
+  GS.players = [];
 
   for (let i = 0; i < count; i++) {
     let nameInput = document.getElementById(`playerName${i}`);
     let name = nameInput?.value || `Player ${i+1}`;
 
-    players.push({
+    GS.players.push({
       money: 1000,
       name,
       color: playerColors[i],
@@ -18,9 +18,9 @@ function startGame() {
     });
   }
 
-  stocks.forEach(s => {
+  GS.stocks.forEach(s => {
     s.history = [s.price];
-    players.forEach((_, i) => {
+    GS.players.forEach((_, i) => {
       s.owned[i] = 0;
       s.totalSpent[i] = 0;
     });
@@ -29,46 +29,46 @@ function startGame() {
   document.getElementById("setup").classList.add("hidden");
   document.getElementById("game").classList.remove("hidden");
 
-  currentPlayer = 0;
-  turn = 1;
-  actionTracker = {};
+  GS.currentPlayer = 0;
+  GS.turn = 1;
+  GS.actionTracker = {};
 
   render();
 }
 
 function endTurn() {
-  currentPlayer++;
+  GS.currentPlayer++;
 
-  if (currentPlayer >= players.length) {
-    currentPlayer = 0;
-    turn++;
+  if (GS.currentPlayer >= GS.players.length) {
+    GS.currentPlayer = 0;
+    GS.turn++;
 
     updateMarket();
     applyDividends();
     randomEvent();
 
-    players.forEach((_, i) => updatePlayerHistory(i));
+    GS.players.forEach((_, i) => updatePlayerHistory(i));
   }
 
-  actionTracker = {};
+  GS.actionTracker = {};
 
-  if (players[currentPlayer].money < 0) forceSell();
+  if (GS.players[GS.currentPlayer].money < 0) forceSell();
 
   checkWin();
   render();
 }
 
 function checkWin(){
-  if(gameMode==="turns" && turn>modeValue) return endGame(true);
-  if(gameMode==="money" && players.some(p=>p.money>=modeValue)) return endGame(true);
+  if(GS.gameMode==="turns" && GS.turn>GS.modeValue) return endGame(true);
+  if(GS.gameMode==="money" && GS.players.some(p=>p.money>=GS.modeValue)) return endGame(true);
 }
 
 function endGame(force=false){
   if(!force) return resetGame();
 
-  let scores = players.map((p,i)=>{
+  let scores = GS.players.map((p,i)=>{
     let total = p.money;
-    stocks.forEach(s=> total += s.owned[i] * s.price);
+    GS.stocks.forEach(s=> total += s.owned[i] * s.price);
     return { total, name: p.name, color: p.color };
   });
 
@@ -79,7 +79,7 @@ function endGame(force=false){
 function resetGame(){
   document.getElementById('setup').classList.remove('hidden');
   document.getElementById('game').classList.add('hidden');
-  players=[]; currentPlayer=0; turn=1; actionTracker={};
+  GS.players=[]; GS.currentPlayer=0; GS.turn=1; GS.actionTracker={};
 }
 window.Game = window.Game || {};
 

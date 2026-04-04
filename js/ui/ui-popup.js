@@ -9,3 +9,7 @@ function popup(html) {
 function closePopup(){
   document.getElementById("popup").classList.add("hidden");
 }
+window.Game = window.Game || {};
+
+Game.popup = popup;
+Game.closePopup = closePopup;

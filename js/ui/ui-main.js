@@ -9,3 +9,11 @@ document.getElementById("playerCount").addEventListener("change",()=>{
     container.appendChild(div);
   }
 });
+function confirmEndGame(){
+  Game.popup(`
+    <h2>End Game?</h2>
+    <p>Are you sure you want to end the game?</p>
+    <button onclick="Game.endGame(true)">Yes</button>
+    <button onclick="Game.closePopup()">Cancel</button>
+  `);
+}

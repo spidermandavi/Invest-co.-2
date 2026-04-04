@@ -17,3 +17,4 @@ function confirmEndGame(){
     <button onclick="Game.closePopup()">Cancel</button>
   `);
 }
+window.confirmEndGame = confirmEndGame;
